@@ -16,7 +16,6 @@
 - Next.js // Framework (Backend)
 - React // Framework (Frontend)
 - Typescript // Tipagem
-- Styled Components // Estilos
-- shadcn/ui // Componentes
+- tailwindcss // Estilos
 - Prisma // ORM
 - PostgreSQL // Banco de dados
