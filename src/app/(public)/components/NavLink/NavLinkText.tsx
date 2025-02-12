@@ -4,6 +4,6 @@ interface NavLinkTextProps {
 
 export default function NavLinkText({ children }: NavLinkTextProps) {
   return (
-    <span className="flex-1 text-sm font-normal text-gray-400">{children}</span>
+    <span className="flex-1 text-sm font-normal text-gray-400 whitespace-nowrap">{children}</span>
   );
 }
