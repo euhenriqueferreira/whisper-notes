@@ -34,7 +34,7 @@ export default function Sidebar() {
 	return (
 		<aside className="h-full flex items-center gap-2.5">
 			<motion.div
-				className="bg-gray-700 rounded-md w-[260px] h-full py-[30px] overflow-hidden"
+				className="bg-gray-700 rounded-md w-[260px] h-full py-[30px] overflow-hidden shadow-md shadow-black/5"
 				initial={false}
 				animate={{ width: isSidebarCollapsed ? 50 : 260 }}
 				transition={{ duration: 0.25, ease: "easeInOut" }}
@@ -79,9 +79,9 @@ export default function Sidebar() {
 							}}
 							transition={{ duration: 0.25, ease: "easeInOut" }}
 						>
-							<NavLinkRoot>
+							<NavLinkRoot active={true}>
 								<House size={16} className="min-w-6" />
-								<NavLinkText>Home</NavLinkText>
+								<NavLinkText active={true}>Home</NavLinkText>
 								<CaretRight size={14} />
 							</NavLinkRoot>
 
