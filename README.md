@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Decisões de negócio
 
-## Getting Started
+- Menu colapsado vai ser interagível.
+- Quando o usuário clicar em Criar Pasta, não vai ser enviado para uma página, apenas abrirá o dialog independente da página que o usuário estiver.
+- A página de criação e edição de notas vai ser a mesma.
+- Nas linhas da lista de notas, o usuário pode clicar em qualquer lugar que não seja um botão, e a nota deverá ser aberta.
+- Pela primeira vez, o usuário deverá se cadastrar com link mágico por e-mail.
+- O usuário poderá modificar a forma de login (para login com e-mail e senha) na página de perfil
 
-First, run the development server:
+# Tabelas banco de dados
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![alt text](image.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Tecnologias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js // Framework (Backend)
+- React // Framework (Frontend)
+- Typescript // Tipagem
+- Styled Components // Estilos
+- shadcn/ui // Componentes
+- Prisma // ORM
+- PostgreSQL // Banco de dados
