@@ -3,24 +3,46 @@
 @tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-  background: radial-gradient(
-    circle,
-    rgba(38, 38, 38, 1) 0%,
-    rgba(29, 29, 29, 1) 70%
-  );
-  -webkit-font-smoothing: antialiased;
+	background: radial-gradient(
+		circle,
+		rgba(38, 38, 38, 1) 0%,
+		rgba(29, 29, 29, 1) 70%
+	);
+	-webkit-font-smoothing: antialiased;
 }
 
 body,
 input,
 textarea,
 button {
-  font-size: 1rem;
-  font-weight: 400;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #595959;
+	border-radius: 6px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }

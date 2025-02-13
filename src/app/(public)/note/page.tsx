@@ -31,7 +31,7 @@ export default function Note() {
 					/>
 					<textarea
 						placeholder="Escreva seus pensamentos..."
-						className="resize-none w-full h-full flex items-center bg-transparent focus:outline-none text-gray-400 placeholder:text-gray-600 text-md font-normal leading-6"
+						className="resize-none w-full h-full flex items-center bg-transparent focus:outline-none text-gray-400 placeholder:text-gray-600 text-md font-normal leading-6 pr-1.5"
 					></textarea>
 				</div>
 

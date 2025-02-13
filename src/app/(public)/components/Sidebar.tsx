@@ -3,7 +3,6 @@ import {
 	CaretLeft,
 	CaretRight,
 	ClockCounterClockwise,
-	Folder,
 	House,
 	ListDashes,
 	Note,
@@ -88,12 +87,6 @@ export default function Sidebar() {
 							<NavLinkRoot>
 								<Note size={16} className="min-w-6" />
 								<NavLinkText>Criar nota</NavLinkText>
-								<CaretRight size={14} />
-							</NavLinkRoot>
-
-							<NavLinkRoot>
-								<Folder size={16} className="min-w-6" />
-								<NavLinkText>Criar pasta</NavLinkText>
 								<CaretRight size={14} />
 							</NavLinkRoot>
 

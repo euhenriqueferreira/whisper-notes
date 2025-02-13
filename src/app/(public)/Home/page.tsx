@@ -3,8 +3,7 @@ import ButtonGrayOutlineRoot from "@/app/components/button/variants/ButtonGrayOu
 import {
 	CaretRight,
 	ClockCounterClockwise,
-	Folder,
-	FolderOpen,
+	ListDashes,
 	Note,
 	Star,
 	UserCircleDashed,
@@ -18,7 +17,7 @@ import NavLinkText from "../components/NavLink/NavLinkText";
 export default function Home() {
 	return (
 		<div className="flex flex-col gap-12">
-			<header className="relative flex items-end shadow-md shadow-black/8">
+			<header className="relative flex items-end shadow-md shadow-black/5">
 				<Image
 					src={profileCoverImg}
 					alt=""
@@ -45,20 +44,20 @@ export default function Home() {
 			<div className="flex flex-col gap-5 px-8">
 				<section className="flex flex-col gap-4">
 					<h2 className="tracking-tight text-xl font-medium text-gray-400 leading-tight">
-						Pastas mais recentes
+						Acesso rápido
 					</h2>
 					<div className="flex items-center gap-6">
 						<ButtonGrayOutlineRoot>
 							<ButtonText text="Listas de compras" />
-							<FolderOpen size={20} />
+							<Note size={20} />
 						</ButtonGrayOutlineRoot>
 						<ButtonGrayOutlineRoot>
 							<ButtonText text="Notas sobre o trabalho" />
-							<FolderOpen size={20} />
+							<Note size={20} />
 						</ButtonGrayOutlineRoot>
 						<ButtonGrayOutlineRoot>
 							<ButtonText text="Receitas" />
-							<FolderOpen size={20} />
+							<Note size={20} />
 						</ButtonGrayOutlineRoot>
 					</div>
 				</section>
@@ -89,7 +88,7 @@ export default function Home() {
 						Notas mais recentes
 					</h2>
 
-					<div className="w-full rounded-md border border-gray-700 shadow-md shadow-black/8">
+					<div className="w-full rounded-md overflow-hidden border border-gray-700 shadow-md shadow-black/5">
 						<div className="w-full bg-gray-700">
 							<div className="w-full h-10 flex items-center justify-between px-3">
 								<span className="text-sm font-semibold text-gray-400">
@@ -148,15 +147,15 @@ export default function Home() {
 					<h2 className="tracking-tight text-xl font-medium text-gray-400 leading-tight">
 						Ações
 					</h2>
-					<div className="w-full flex flex-col justify-between gap-1 py-4 px-3 flex-1 rounded-md border border-gray-700 shadow-md shadow-black/8">
+					<div className="w-full flex flex-col justify-between gap-1 py-4 px-3 flex-1 rounded-md border border-gray-700 shadow-md shadow-black/5">
 						<NavLinkRoot variant="big">
 							<Note size={16} className="min-w-6" />
 							<NavLinkText>Criar nota</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
 						<NavLinkRoot variant="big">
-							<Folder size={16} className="min-w-6" />
-							<NavLinkText>Criar pasta</NavLinkText>
+							<ListDashes size={16} className="min-w-6" />
+							<NavLinkText>Lista de notas</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
 						<NavLinkRoot variant="big">
