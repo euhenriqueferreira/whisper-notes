@@ -172,17 +172,17 @@ export default function Home() {
 						Ações
 					</h2>
 					<div className="w-full flex flex-col justify-between gap-1 py-4 px-3 flex-1 rounded-md border border-gray-700 shadow-md shadow-black/5">
-						<NavLinkRoot variant="big">
+						<NavLinkRoot href="/note" variant="big">
 							<Note size={16} className="min-w-6" />
 							<NavLinkText>Criar nota</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
-						<NavLinkRoot variant="big">
+						<NavLinkRoot href="/notes-list" variant="big">
 							<ListDashes size={16} className="min-w-6" />
 							<NavLinkText>Lista de notas</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
-						<NavLinkRoot variant="big">
+						<NavLinkRoot href="" variant="big">
 							<ClockCounterClockwise
 								size={16}
 								className="min-w-6"
@@ -190,7 +190,7 @@ export default function Home() {
 							<NavLinkText>Histórico de alterações</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
-						<NavLinkRoot variant="big">
+						<NavLinkRoot href="" variant="big">
 							<UserCircleDashed size={16} className="min-w-6" />
 							<NavLinkText>Editar perfil</NavLinkText>
 							<CaretRight size={14} />

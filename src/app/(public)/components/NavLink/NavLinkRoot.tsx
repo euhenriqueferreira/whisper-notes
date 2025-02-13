@@ -5,16 +5,18 @@ interface NavLinkRootProps {
 	children: React.ReactNode;
 	variant?: "big" | "normal";
 	active?: boolean;
+	href: string;
 }
 
 export default function NavLinkRoot({
 	children,
 	variant = "normal",
 	active,
+	href,
 }: NavLinkRootProps) {
 	return (
 		<Link
-			href=""
+			href={href}
 			className={`
         ${
 			variant === "normal" &&

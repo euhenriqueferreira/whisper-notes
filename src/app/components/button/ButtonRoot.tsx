@@ -58,7 +58,7 @@ export function ButtonRoot({
         ${
 			variant === "ghost" &&
 			color === "primary" &&
-			"text-yellow-400 bg-transparent hover:bg-yellow-500 hover:text-gray-400"
+			"text-yellow-400 bg-transparent hover:bg-gray-700 hover:text-gray-400"
 		}
         ${
 			variant === "ghost" &&
@@ -68,7 +68,7 @@ export function ButtonRoot({
         ${
 			variant === "ghost" &&
 			color === "danger" &&
-			"text-red-400 bg-transparent hover:bg-red-500 hover:text-gray-400"
+			"text-red-400 bg-transparent hover:bg-gray-700 hover:text-gray-400"
 		}
     `}
 		>

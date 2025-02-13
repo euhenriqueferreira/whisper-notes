@@ -78,25 +78,25 @@ export default function Sidebar() {
 							}}
 							transition={{ duration: 0.25, ease: "easeInOut" }}
 						>
-							<NavLinkRoot active={true}>
+							<NavLinkRoot href="/home" active={true}>
 								<House size={16} className="min-w-6" />
 								<NavLinkText active={true}>Home</NavLinkText>
 								<CaretRight size={14} />
 							</NavLinkRoot>
 
-							<NavLinkRoot>
+							<NavLinkRoot href="/note">
 								<Note size={16} className="min-w-6" />
 								<NavLinkText>Criar nota</NavLinkText>
 								<CaretRight size={14} />
 							</NavLinkRoot>
 
-							<NavLinkRoot>
+							<NavLinkRoot href="/notes-list">
 								<ListDashes size={16} className="min-w-6" />
 								<NavLinkText>Lista de notas</NavLinkText>
 								<CaretRight size={14} />
 							</NavLinkRoot>
 
-							<NavLinkRoot>
+							<NavLinkRoot href="">
 								<ClockCounterClockwise
 									size={16}
 									className="min-w-6"
@@ -124,7 +124,7 @@ export default function Sidebar() {
 							}}
 							transition={{ duration: 0.25, ease: "easeInOut" }}
 						>
-							<NavLinkRoot>
+							<NavLinkRoot href="">
 								<UserCircleDashed
 									size={16}
 									className="min-w-6"
@@ -133,7 +133,7 @@ export default function Sidebar() {
 								<CaretRight size={14} />
 							</NavLinkRoot>
 
-							<NavLinkRoot>
+							<NavLinkRoot href="">
 								<SignOut size={16} className="min-w-6" />
 								<NavLinkText>Fazer logout</NavLinkText>
 								<CaretRight size={14} />
