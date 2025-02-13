@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
-interface ButtonRootProps {
+interface ButtonRootProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode;
 	variant?: "fill" | "outline" | "ghost";
 	color?: "primary" | "secondary" | "danger";
 	size?: "small" | "normal" | "big" | "icon";
+	rounded?: boolean;
 }
 
 export function ButtonRoot({
@@ -12,13 +13,17 @@ export function ButtonRoot({
 	variant = "fill",
 	color = "primary",
 	size = "normal",
+	rounded = true,
+	...props
 }: ButtonRootProps) {
 	const countChildren = React.Children.count(children);
 
 	return (
 		<button
-			className={`rounded-md  flex items-center transition duration-100 cursor-pointer font-semibold
-        ${countChildren > 1 ? "gap-2" : "justify-center"}
+			className={`flex items-center transition duration-100 cursor-pointer font-semibold
+
+		${countChildren > 1 ? "gap-2" : "justify-center"}
+		${rounded ? "rounded-md" : ""}
 
         ${size === "icon" && "p-1 w-fit"}
         ${size === "small" && "h-6 text-sm px-1.5 w-full"}

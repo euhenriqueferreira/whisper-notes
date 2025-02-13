@@ -14,7 +14,7 @@ import Image from "next/image";
 import profileCoverImg from "../../../assets/profile-cover-image.png";
 import profileImg from "../../../assets/profile-image.png";
 
-export default function Note() {
+export default function Profile() {
 	return (
 		<div className="flex flex-col gap-8 h-full px-10">
 			<h1 className="text-3xl text-gray-400 tracking-tight leading-tight font-semibold text-left">
@@ -107,7 +107,7 @@ export default function Note() {
 					Altere configurações importantes
 				</h2>
 
-				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 rounded-md">
+				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 hover:border-gray-600 transition duration-100 rounded-md">
 					<p className="text-md font-semibold text-gray-400">
 						Recupere sua senha
 					</p>
@@ -123,7 +123,7 @@ export default function Note() {
 						</ButtonRoot>
 					</div>
 				</div>
-				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 rounded-md">
+				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 hover:border-gray-600 transition duration-100 rounded-md">
 					<p className="text-md font-semibold text-gray-400">
 						Método de login
 					</p>
@@ -139,23 +139,31 @@ export default function Note() {
 						</ButtonRoot>
 					</div>
 				</div>
-				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 rounded-md">
+				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 hover:border-gray-600 transition duration-100 rounded-md">
 					<p className="text-md font-semibold text-gray-400">
 						Trocar tema
 					</p>
 
-					<div className="w-40">
+					<div className="flex w-64 rounded-md overflow-hidden">
 						<ButtonRoot
 							color="secondary"
 							size="normal"
-							variant="outline"
+							variant="fill"
+							rounded={false}
 						>
-							<ButtonText>Recuperar senha </ButtonText>
-							<ArrowsCounterClockwise size={14} />
+							<ButtonText align="center">Claro</ButtonText>
+						</ButtonRoot>
+						<ButtonRoot
+							color="primary"
+							size="normal"
+							variant="fill"
+							rounded={false}
+						>
+							<ButtonText align="center">Escuro</ButtonText>
 						</ButtonRoot>
 					</div>
 				</div>
-				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-red-400 rounded-md">
+				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-red-400 hover:border-red-300 transition duration-100 rounded-md">
 					<p className="text-md font-semibold text-red-400">
 						Excluir conta
 					</p>

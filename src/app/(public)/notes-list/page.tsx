@@ -17,7 +17,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
-export default function Note() {
+export default function NoteList() {
 	return (
 		<div className="flex flex-col gap-8 h-full px-10">
 			<h1 className="text-3xl text-gray-400 tracking-tight leading-tight font-semibold text-left">
