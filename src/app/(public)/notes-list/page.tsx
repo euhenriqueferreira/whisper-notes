@@ -15,6 +15,7 @@ import {
 	Trash,
 	XCircle,
 } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
 
 export default function Note() {
 	return (
@@ -58,14 +59,16 @@ export default function Note() {
 							</ButtonRoot>
 						</div>
 						<div className="w-32">
-							<ButtonRoot
-								variant="fill"
-								color="primary"
-								size="normal"
-							>
-								<ButtonText>Nova nota</ButtonText>
-								<NoteBlank size={16} className="ml-2" />
-							</ButtonRoot>
+							<Link href="/note">
+								<ButtonRoot
+									variant="fill"
+									color="primary"
+									size="normal"
+								>
+									<ButtonText>Nova nota</ButtonText>
+									<NoteBlank size={16} className="ml-2" />
+								</ButtonRoot>
+							</Link>
 						</div>
 					</div>
 				</div>
