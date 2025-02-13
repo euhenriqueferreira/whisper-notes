@@ -68,7 +68,7 @@ export function ButtonRoot({
         ${
 			variant === "ghost" &&
 			color === "secondary" &&
-			"text-gray-600 bg-transparent hover:bg-gray-700 hover:text-gray-400"
+			"text-gray-400 bg-transparent hover:bg-gray-600 hover:text-gray-400"
 		}
         ${
 			variant === "ghost" &&

@@ -4,8 +4,11 @@ import { TextInput } from "@/app/components/textInput/TextInput";
 import { TextInputBox } from "@/app/components/textInput/TextInputBox";
 import { TextInputLabel } from "@/app/components/textInput/TextInputLabel";
 import { TextInputRoot } from "@/app/components/textInput/TextInputRoot";
+import { ThemeSelector } from "@/app/components/themeSelector/ThemeSelector";
 import {
 	ArrowsCounterClockwise,
+	CameraRotate,
+	CaretDown,
 	FloppyDisk,
 	Trash,
 	XCircle,
@@ -23,16 +26,27 @@ export default function Profile() {
 			<section className="flex items-stretch gap-4">
 				<div className="rounded-md overflow-hidden w-[350px] bg-gray-700 min-h-[250px] flex flex-col">
 					<header>
-						<Image
-							src={profileCoverImg}
-							alt=""
-							className="w-full h-[100px] object-cover"
-						/>
-						<Image
-							src={profileImg}
-							alt=""
-							className="h-[60px] w-[60px] rounded-full object-cover ml-3 -mt-[35px]"
-						/>
+						<div className="relative group overflow-hidden">
+							<Image
+								src={profileCoverImg}
+								alt=""
+								className="w-full h-[100px] object-cover"
+							/>
+							<div className="w-full h-full bg-gray-700/85 absolute left-0 top-0 z-10 text-md text-gray-400 font-semibold flex justify-center items-center gap-2 cursor-pointer opacity-0 hover:opacity-100 transition duration-100">
+								<p>Editar foto</p>
+								<CameraRotate size={30} />
+							</div>
+						</div>
+						<div className="relative w-fit z-30 ml-3 ">
+							<Image
+								src={profileImg}
+								alt=""
+								className="h-[60px] w-[60px] rounded-full object-cover -mt-[35px]"
+							/>
+							<div className="w-full h-full rounded-full bg-gray-700/85 absolute left-0 top-0 z-10 text-md text-gray-400 font-semibold flex justify-center items-center gap-2 cursor-pointer opacity-0 hover:opacity-100 transition duration-100">
+								<CameraRotate size={30} />
+							</div>
+						</div>
 					</header>
 					<footer className="px-3 py-4 flex-1 flex flex-col justify-between">
 						<div>
@@ -102,7 +116,7 @@ export default function Profile() {
 				</form>
 			</section>
 
-			<section className="flex flex-col gap-3">
+			<section className="flex flex-col gap-2">
 				<h2 className="text-xl text-gray-400 font-semibold tracking-tight leading-tight">
 					Altere configurações importantes
 				</h2>
@@ -128,15 +142,37 @@ export default function Profile() {
 						Método de login
 					</p>
 
-					<div className="w-40">
-						<ButtonRoot
-							color="secondary"
-							size="normal"
-							variant="outline"
-						>
-							<ButtonText>Recuperar senha </ButtonText>
-							<ArrowsCounterClockwise size={14} />
-						</ButtonRoot>
+					<div className="w-52">
+						<div className="relative">
+							<ButtonRoot
+								color="secondary"
+								size="normal"
+								variant="outline"
+							>
+								<ButtonText>Tipo de login</ButtonText>
+								<CaretDown size={14} />
+							</ButtonRoot>
+							{/* <div className="bg-gray-800 absolute z-10 top-[105%] border border-gray-400 w-full rounded-md p-1 flex flex-col gap-1 shadow-md shadow-black/5">
+								<ButtonRoot
+									color="secondary"
+									size="normal"
+									variant="ghost"
+								>
+									<ButtonText>
+										Login com e-mail e senha
+									</ButtonText>
+								</ButtonRoot>
+								<ButtonRoot
+									color="secondary"
+									size="normal"
+									variant="ghost"
+								>
+									<ButtonText>
+										Login com link por e-mail
+									</ButtonText>
+								</ButtonRoot>
+							</div> */}
+						</div>
 					</div>
 				</div>
 				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 hover:border-gray-600 transition duration-100 rounded-md">
@@ -144,24 +180,7 @@ export default function Profile() {
 						Trocar tema
 					</p>
 
-					<div className="flex w-64 rounded-md overflow-hidden">
-						<ButtonRoot
-							color="secondary"
-							size="normal"
-							variant="fill"
-							rounded={false}
-						>
-							<ButtonText align="center">Claro</ButtonText>
-						</ButtonRoot>
-						<ButtonRoot
-							color="primary"
-							size="normal"
-							variant="fill"
-							rounded={false}
-						>
-							<ButtonText align="center">Escuro</ButtonText>
-						</ButtonRoot>
-					</div>
+					<ThemeSelector />
 				</div>
 				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-red-400 hover:border-red-300 transition duration-100 rounded-md">
 					<p className="text-md font-semibold text-red-400">
