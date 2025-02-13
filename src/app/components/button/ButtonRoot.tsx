@@ -17,7 +17,7 @@ export function ButtonRoot({
 
 	return (
 		<button
-			className={`rounded-md  flex items-center transition duration-100 cursor-pointer
+			className={`rounded-md  flex items-center transition duration-100 cursor-pointer font-semibold
         ${countChildren > 1 ? "gap-2" : "justify-center"}
 
         ${size === "icon" && "p-1 w-fit"}

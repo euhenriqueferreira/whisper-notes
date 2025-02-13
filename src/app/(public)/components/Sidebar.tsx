@@ -124,7 +124,7 @@ export default function Sidebar() {
 							}}
 							transition={{ duration: 0.25, ease: "easeInOut" }}
 						>
-							<NavLinkRoot href="">
+							<NavLinkRoot href="/profile">
 								<UserCircleDashed
 									size={16}
 									className="min-w-6"

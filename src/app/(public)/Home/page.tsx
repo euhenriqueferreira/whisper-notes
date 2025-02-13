@@ -190,7 +190,7 @@ export default function Home() {
 							<NavLinkText>Histórico de alterações</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
-						<NavLinkRoot href="" variant="big">
+						<NavLinkRoot href="/profile" variant="big">
 							<UserCircleDashed size={16} className="min-w-6" />
 							<NavLinkText>Editar perfil</NavLinkText>
 							<CaretRight size={14} />
