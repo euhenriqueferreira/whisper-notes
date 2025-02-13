@@ -1,11 +1,16 @@
+import React from "react";
+
 interface ButtonTextProps {
-	text: string;
+	children: React.ReactNode;
+	align?: "center" | "left" | "right";
 }
 
-export default function ButtonText({ text }: ButtonTextProps) {
+export function ButtonText({ children, align = "left" }: ButtonTextProps) {
 	return (
-		<span className="block flex-1 overflow-hidden text-left whitespace-nowrap text-ellipsis leading-tight">
-			{text}
+		<span
+			className={`flex-1 text-${align} overflow-hidden whitespace-nowrap text-ellipsis`}
+		>
+			{children}
 		</span>
 	);
 }

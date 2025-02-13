@@ -4,14 +4,11 @@ interface TextInputLabelProps extends LabelHTMLAttributes<HTMLLabelElement> {
   children: React.ReactNode;
 }
 
-export default function TextInputLabel({
-  children,
-  htmlFor,
-}: TextInputLabelProps) {
+export function TextInputLabel({ children, ...props }: TextInputLabelProps) {
   return (
     <label
-      htmlFor={htmlFor}
-      className="text-md font-semibold text-gray-400 group-focus-within:text-yellow-400"
+      className={`text-md text-gray-400 font-semibold text-left`}
+      {...props}
     >
       {children}
     </label>

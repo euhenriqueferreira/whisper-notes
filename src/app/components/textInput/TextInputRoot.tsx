@@ -1,14 +1,7 @@
-import React from "react";
-
-interface TextInputProps {
+interface TextInputRootProps {
   children: React.ReactNode;
-  variant?: "fill" | "outline";
 }
 
-export default function TextInputRoot({ children }: TextInputProps) {
-  return (
-    <div className="flex flex-col w-full items-start gap-1 relative group">
-      {children}
-    </div>
-  );
+export function TextInputRoot({ children }: TextInputRootProps) {
+  return <div className={`flex flex-col gap-1 w-full`}>{children}</div>;
 }

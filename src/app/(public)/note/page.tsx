@@ -1,5 +1,5 @@
-import ButtonText from "@/app/components/button/ButtonText";
-import ButtonYellowFillRoot from "@/app/components/button/variants/ButtonYellowFillRoot";
+import { ButtonRoot } from "@/app/components/button/ButtonRoot";
+import { ButtonText } from "@/app/components/button/ButtonText";
 import {
 	FloppyDisk,
 	HashStraight,
@@ -36,10 +36,10 @@ export default function Note() {
 				</div>
 
 				<div className="w-36 mx-auto absolute left-1/2 -translate-x-1/2 bottom-5 shadow-md shadow-black/5">
-					<ButtonYellowFillRoot>
-						<ButtonText text="Salvar nota" />
+					<ButtonRoot color="primary" size="big" variant="fill">
+						<ButtonText>Salvar nota</ButtonText>
 						<FloppyDisk size={20} />
-					</ButtonYellowFillRoot>
+					</ButtonRoot>
 				</div>
 			</form>
 		</div>

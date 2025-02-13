@@ -1,5 +1,5 @@
-import ButtonText from "@/app/components/button/ButtonText";
-import ButtonGrayOutlineRoot from "@/app/components/button/variants/ButtonGrayOutlineRoot";
+import { ButtonRoot } from "@/app/components/button/ButtonRoot";
+import { ButtonText } from "@/app/components/button/ButtonText";
 import {
 	CaretRight,
 	ClockCounterClockwise,
@@ -46,38 +46,62 @@ export default function Home() {
 					<h2 className="tracking-tight text-xl font-medium text-gray-400 leading-tight">
 						Acesso rápido
 					</h2>
-					<div className="flex items-center gap-6">
-						<ButtonGrayOutlineRoot>
-							<ButtonText text="Listas de compras" />
+					<div className="grid grid-cols-3 gap-6">
+						<ButtonRoot
+							color="secondary"
+							size="big"
+							variant="outline"
+						>
+							<ButtonText>Listas de compras</ButtonText>
 							<Note size={20} />
-						</ButtonGrayOutlineRoot>
-						<ButtonGrayOutlineRoot>
-							<ButtonText text="Notas sobre o trabalho" />
+						</ButtonRoot>
+						<ButtonRoot
+							color="secondary"
+							size="big"
+							variant="outline"
+						>
+							<ButtonText>Notas sobre o trabalho</ButtonText>
 							<Note size={20} />
-						</ButtonGrayOutlineRoot>
-						<ButtonGrayOutlineRoot>
-							<ButtonText text="Receitas" />
+						</ButtonRoot>
+						<ButtonRoot
+							color="secondary"
+							size="big"
+							variant="outline"
+						>
+							<ButtonText>Receitas</ButtonText>
 							<Note size={20} />
-						</ButtonGrayOutlineRoot>
+						</ButtonRoot>
 					</div>
 				</section>
 				<section className="flex flex-col gap-4">
 					<h2 className="tracking-tight text-xl font-medium text-gray-400 leading-tight">
 						Favoritos
 					</h2>
-					<div className="flex items-center gap-6">
-						<ButtonGrayOutlineRoot>
-							<ButtonText text="Listas de compras" />
+					<div className="grid grid-cols-3 gap-6">
+						<ButtonRoot
+							color="secondary"
+							size="big"
+							variant="outline"
+						>
+							<ButtonText>Listas de compras</ButtonText>
 							<Star size={20} weight="fill" color="#CCB900" />
-						</ButtonGrayOutlineRoot>
-						<ButtonGrayOutlineRoot>
-							<ButtonText text="Notas sobre o trabalho" />
+						</ButtonRoot>
+						<ButtonRoot
+							color="secondary"
+							size="big"
+							variant="outline"
+						>
+							<ButtonText>Notas sobre o trabalho</ButtonText>
 							<Star size={20} weight="fill" color="#CCB900" />
-						</ButtonGrayOutlineRoot>
-						<ButtonGrayOutlineRoot>
-							<ButtonText text="Receitas" />
+						</ButtonRoot>
+						<ButtonRoot
+							color="secondary"
+							size="big"
+							variant="outline"
+						>
+							<ButtonText>Receitas</ButtonText>
 							<Star size={20} weight="fill" color="#CCB900" />
-						</ButtonGrayOutlineRoot>
+						</ButtonRoot>
 					</div>
 				</section>
 			</div>

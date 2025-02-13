@@ -1,18 +1,21 @@
 import { InputHTMLAttributes } from "react";
 
-interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
+  font?: "small" | "normal";
+}
 
-export default function TextInput({
+export function TextInput({
+  font = "normal",
   type = "text",
-  id,
-  placeholder,
+  ...props
 }: TextInputProps) {
   return (
     <input
       type={type}
-      id={id}
-      placeholder={placeholder}
-      className="rounded-md w-full h-10 bg-gray-700 border border-gray-700 px-3 text-gray-400 font-normal text-md placeholder:text-gray-500 focus:outline-none focus:border focus:border-yellow-400"
+      className={`w-full rounded-md  bg-transparent focus:outline-none text-inherit ${
+        font === "normal" ? "text-md" : "text-sm"
+      }`}
+      {...props}
     />
   );
 }
