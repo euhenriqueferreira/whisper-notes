@@ -1,5 +1,6 @@
 import { ButtonRoot } from "@/app/components/button/ButtonRoot";
 import { ButtonText } from "@/app/components/button/ButtonText";
+import { SelectRoot } from "@/app/components/select/SelectRoot";
 import { TextInput } from "@/app/components/textInput/TextInput";
 import { TextInputBox } from "@/app/components/textInput/TextInputBox";
 import { TextInputLabel } from "@/app/components/textInput/TextInputLabel";
@@ -144,34 +145,36 @@ export default function Profile() {
 
 					<div className="w-52">
 						<div className="relative">
-							<ButtonRoot
-								color="secondary"
-								size="normal"
-								variant="outline"
-							>
-								<ButtonText>Tipo de login</ButtonText>
-								<CaretDown size={14} />
-							</ButtonRoot>
-							{/* <div className="bg-gray-800 absolute z-10 top-[105%] border border-gray-400 w-full rounded-md p-1 flex flex-col gap-1 shadow-md shadow-black/5">
+							<SelectRoot>
 								<ButtonRoot
 									color="secondary"
 									size="normal"
-									variant="ghost"
+									variant="outline"
 								>
-									<ButtonText>
-										Login com e-mail e senha
-									</ButtonText>
+									<ButtonText>Tipo de login</ButtonText>
+									<CaretDown size={14} />
 								</ButtonRoot>
-								<ButtonRoot
-									color="secondary"
-									size="normal"
-									variant="ghost"
-								>
-									<ButtonText>
-										Login com link por e-mail
-									</ButtonText>
-								</ButtonRoot>
-							</div> */}
+								{/* <SelectDropdown>
+									<ButtonRoot
+										color="secondary"
+										size="normal"
+										variant="ghost"
+									>
+										<ButtonText>
+											Login com e-mail e senha
+										</ButtonText>
+									</ButtonRoot>
+									<ButtonRoot
+										color="secondary"
+										size="normal"
+										variant="ghost"
+									>
+										<ButtonText>
+											Login com link por e-mail
+										</ButtonText>
+									</ButtonRoot>
+								</SelectDropdown> */}
+							</SelectRoot>
 						</div>
 					</div>
 				</div>

@@ -182,12 +182,12 @@ export default function Home() {
 							<NavLinkText>Lista de notas</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
-						<NavLinkRoot href="" variant="big">
+						<NavLinkRoot href="/mutation-history" variant="big">
 							<ClockCounterClockwise
 								size={16}
 								className="min-w-6"
 							/>
-							<NavLinkText>Histórico de alterações</NavLinkText>
+							<NavLinkText>Histórico de eventos</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
 						<NavLinkRoot href="/profile" variant="big">

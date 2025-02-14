@@ -96,14 +96,12 @@ export default function Sidebar() {
 								<CaretRight size={14} />
 							</NavLinkRoot>
 
-							<NavLinkRoot href="">
+							<NavLinkRoot href="/event-history">
 								<ClockCounterClockwise
 									size={16}
 									className="min-w-6"
 								/>
-								<NavLinkText>
-									Histórico de alterações
-								</NavLinkText>
+								<NavLinkText>Histórico de eventos</NavLinkText>
 								<CaretRight size={14} />
 							</NavLinkRoot>
 						</motion.div>
