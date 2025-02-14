@@ -1,5 +1,11 @@
 import { ButtonRoot } from "@/app/components/button/ButtonRoot";
 import { ButtonText } from "@/app/components/button/ButtonText";
+import { TableBody } from "@/app/components/table/TableBody";
+import { TableData } from "@/app/components/table/TableData";
+import { TableHead } from "@/app/components/table/TableHead";
+import { TableHeader } from "@/app/components/table/TableHeader";
+import { TableRoot } from "@/app/components/table/TableRoot";
+import { TableRow } from "@/app/components/table/TableRow";
 import {
 	CaretRight,
 	ClockCounterClockwise,
@@ -112,60 +118,26 @@ export default function Home() {
 						Notas mais recentes
 					</h2>
 
-					<div className="w-full rounded-md overflow-hidden border border-gray-700 shadow-md shadow-black/5">
-						<div className="w-full bg-gray-700">
-							<div className="w-full h-10 flex items-center justify-between px-3">
-								<span className="text-sm font-semibold text-gray-400">
-									Nome da nota
-								</span>
-								<span className="text-sm font-semibold text-gray-400">
-									Última modificação
-								</span>
-							</div>
-						</div>
-						<div className="w-full">
-							<div className="w-full h-10 flex items-center justify-between gap-1.5 px-3 border-b border-gray-700 hover:bg-gray-700/50 transition duration-100 cursor-pointer">
-								<span className="text-sm font-semibold text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
-									Lista de compras do mercado
-								</span>
-								<span className="text-sm font-semibold text-gray-400 whitespace-nowrap">
-									há 10 minutos
-								</span>
-							</div>
-							<div className="w-full h-10 flex items-center justify-between gap-1.5 px-3 border-b border-gray-700 hover:bg-gray-700/50 transition duration-100 cursor-pointer">
-								<span className="text-sm font-semibold text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
-									Receita de bolo de laranja
-								</span>
-								<span className="text-sm font-semibold text-gray-400 whitespace-nowrap">
-									há 2 horas
-								</span>
-							</div>
-							<div className="w-full h-10 flex items-center justify-between gap-1.5 px-3 border-b border-gray-700 hover:bg-gray-700/50 transition duration-100 cursor-pointer">
-								<span className="text-sm font-semibold text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
-									Anotações para entrevista de emprego
-								</span>
-								<span className="text-sm font-semibold text-gray-400 whitespace-nowrap">
-									há 13 horas
-								</span>
-							</div>
-							<div className="w-full h-10 flex items-center justify-between gap-1.5 px-3 border-b border-gray-700 hover:bg-gray-700/50 transition duration-100 cursor-pointer">
-								<span className="text-sm font-semibold text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
-									Horários aulas faculdade
-								</span>
-								<span className="text-sm font-semibold text-gray-400 whitespace-nowrap">
-									há 3 dias
-								</span>
-							</div>
-							<div className="w-full h-10 flex items-center justify-between gap-1.5 px-3 border-b border-gray-700 hover:bg-gray-700/50 transition duration-100 cursor-pointer">
-								<span className="text-sm font-semibold text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
-									Lembrar de comprar isso
-								</span>
-								<span className="text-sm font-semibold text-gray-400 whitespace-nowrap">
-									há 1 mês
-								</span>
-							</div>
-						</div>
-					</div>
+					<TableRoot>
+						<TableHeader>
+							<TableHead>Nome da nota</TableHead>
+							<TableHead>Última modificação</TableHead>
+						</TableHeader>
+						<TableBody>
+							{Array.from({ length: 5 }).map((_, index) => {
+								return (
+									<TableRow key={index}>
+										<TableData className="text-sm font-semibold text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
+											Lista de compras do mercado
+										</TableData>
+										<TableData className="text-sm font-semibold text-gray-400 whitespace-nowrap">
+											há 10 minutos
+										</TableData>
+									</TableRow>
+								);
+							})}
+						</TableBody>
+					</TableRoot>
 				</div>
 				<div className="flex flex-col gap-4 flex-1">
 					<h2 className="tracking-tight text-xl font-medium text-gray-400 leading-tight">
@@ -182,7 +154,7 @@ export default function Home() {
 							<NavLinkText>Lista de notas</NavLinkText>
 							<CaretRight size={14} />
 						</NavLinkRoot>
-						<NavLinkRoot href="/mutation-history" variant="big">
+						<NavLinkRoot href="/event-history" variant="big">
 							<ClockCounterClockwise
 								size={16}
 								className="min-w-6"

@@ -1,13 +1,16 @@
 import { ButtonRoot } from "@/app/components/button/ButtonRoot";
 import { ButtonText } from "@/app/components/button/ButtonText";
+import { Pagination } from "@/app/components/pagination/Pagination";
+import { TableBody } from "@/app/components/table/TableBody";
+import { TableData } from "@/app/components/table/TableData";
+import { TableHead } from "@/app/components/table/TableHead";
+import { TableHeader } from "@/app/components/table/TableHeader";
+import { TableRoot } from "@/app/components/table/TableRoot";
+import { TableRow } from "@/app/components/table/TableRow";
 import { TextInput } from "@/app/components/textInput/TextInput";
 import { TextInputBox } from "@/app/components/textInput/TextInputBox";
 import { TextInputRoot } from "@/app/components/textInput/TextInputRoot";
 import {
-	CaretDoubleLeft,
-	CaretDoubleRight,
-	CaretLeft,
-	CaretRight,
 	Funnel,
 	MagnifyingGlass,
 	NoteBlank,
@@ -72,7 +75,50 @@ export default function NoteList() {
 						</div>
 					</div>
 				</div>
-				<div className="w-full rounded-md overflow-hidden border border-gray-700 shadow-md shadow-black/5">
+
+				<TableRoot>
+					<TableHeader>
+						<TableHead>Nome da nota</TableHead>
+					</TableHeader>
+					<TableBody>
+						{Array.from({ length: 10 }).map((_, index) => {
+							return (
+								<TableRow key={index}>
+									<TableData className="text-sm font-semibold text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
+										Lista de compras do mercado
+									</TableData>
+									<TableData className="text-sm font-semibold text-gray-500 whitespace-nowrap">
+										há 10 minutos
+									</TableData>
+									<TableData>
+										<ButtonRoot
+											color="secondary"
+											size="icon"
+											variant="ghost"
+										>
+											<Star
+												size={14}
+												weight="fill"
+												color="#CCB900"
+											/>
+										</ButtonRoot>
+									</TableData>
+									<TableData>
+										<ButtonRoot
+											color="danger"
+											size="icon"
+											variant="ghost"
+										>
+											<Trash size={14} color="#FF6467" />
+										</ButtonRoot>
+									</TableData>
+								</TableRow>
+							);
+						})}
+					</TableBody>
+				</TableRoot>
+
+				{/* <div className="w-full rounded-md overflow-hidden border border-gray-700 shadow-md shadow-black/5">
 					<div className="w-full bg-gray-700">
 						<div className="w-full h-10 flex items-center justify-between px-3">
 							<span className="text-sm font-semibold text-gray-400">
@@ -302,44 +348,9 @@ export default function NoteList() {
 							</ButtonRoot>
 						</div>
 					</div>
-				</div>
-				<div className="flex justify-between w-full px-3">
-					<div>
-						<span className="text-sm font-semibold text-gray-500">
-							Página 1 de 12
-						</span>
-					</div>
-					<div className="flex gap-3">
-						<ButtonRoot
-							color="secondary"
-							size="icon"
-							variant="outline"
-						>
-							<CaretDoubleLeft size={16} />
-						</ButtonRoot>
-						<ButtonRoot
-							color="secondary"
-							size="icon"
-							variant="outline"
-						>
-							<CaretLeft size={16} />
-						</ButtonRoot>
-						<ButtonRoot
-							color="secondary"
-							size="icon"
-							variant="outline"
-						>
-							<CaretRight size={16} />
-						</ButtonRoot>
-						<ButtonRoot
-							color="secondary"
-							size="icon"
-							variant="outline"
-						>
-							<CaretDoubleRight size={16} />
-						</ButtonRoot>
-					</div>
-				</div>
+				</div> */}
+
+				<Pagination />
 			</section>
 		</div>
 	);
