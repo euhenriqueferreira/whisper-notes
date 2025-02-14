@@ -20,6 +20,7 @@ export function ButtonRoot({
 
 	return (
 		<button
+			{...props}
 			className={`flex items-center transition duration-100 cursor-pointer font-semibold
 
 		${countChildren > 1 ? "gap-2" : "justify-center"}
