@@ -49,17 +49,17 @@ export function ButtonRoot({
         ${
 			variant === "outline" &&
 			color === "primary" &&
-			"text-yellow-400 bg-transparent border border-yellow-400 hover:brightness-75"
+			"text-yellow-400 bg-transparent border border-yellow-400 hover:bg-yellow-400/10"
 		}
         ${
 			variant === "outline" &&
 			color === "secondary" &&
-			"text-gray-400 bg-transparent border border-gray-400 hover:brightness-75"
+			"text-gray-400 bg-transparent border border-gray-400 hover:bg-gray-400/10"
 		}
         ${
 			variant === "outline" &&
 			color === "danger" &&
-			"text-red-400 bg-transparent border border-red-400 hover:brightness-75"
+			"text-red-400 bg-transparent border border-red-400 hover:bg-red-400/10"
 		}
         ${
 			variant === "ghost" &&

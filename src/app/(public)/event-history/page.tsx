@@ -9,6 +9,7 @@ import { TableHeader } from "@/app/components/table/TableHeader";
 import { TableRoot } from "@/app/components/table/TableRoot";
 import { TableRow } from "@/app/components/table/TableRow";
 import {
+	ArrowDown,
 	CaretDown,
 	Funnel,
 	NoteBlank,
@@ -64,9 +65,9 @@ export default function NoteList() {
 						</div>
 						<div className="w-32">
 							<ButtonRoot
-								variant="outline"
+								variant="fill"
 								size="normal"
-								color="secondary"
+								color="primary"
 							>
 								<ButtonText>Filtrar</ButtonText>
 								<Funnel size={16} className="ml-2" />
@@ -76,13 +77,18 @@ export default function NoteList() {
 				</div>
 
 				<TableRoot>
-					<TableHeader>
+					<TableHeader className="flex justify-between px-3 gap-1.5 items-center">
 						<TableHead>Descrição da alteração</TableHead>
+						<TableHead>
+							Última modificação
+							{/* <ArrowUp /> */}
+							<ArrowDown />
+						</TableHead>
 					</TableHeader>
 					<TableBody>
 						{Array.from({ length: 10 }).map((_, index) => {
 							return (
-								<TableRow>
+								<TableRow key={index}>
 									<TableData className="text-sm font-normal text-gray-400 flex-1 whitespace-nowrap text-ellipsis overflow-hidden">
 										<span className="text-sm text-gray-400 font-bold">
 											Henrique

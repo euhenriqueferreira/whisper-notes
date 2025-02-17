@@ -15,6 +15,7 @@ import {
 	UserCircleDashed,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import Link from "next/link";
 import profileCoverImg from "../../../assets/profile-cover-image.png";
 import profileImg from "../../../assets/profile-image.png";
 import NavLinkRoot from "../components/NavLink/NavLinkRoot";
@@ -38,12 +39,14 @@ export default function Home() {
 						</span>
 					</p>
 
-					<Image
-						src={profileImg}
-						alt=""
-						className="rounded-full w-[60px] h-[60px]"
-						quality={100}
-					/>
+					<Link href="/profile" className="cursor-pointer">
+						<Image
+							src={profileImg}
+							alt=""
+							className="rounded-full w-[60px] h-[60px] hover:brightness-110 transitio duration-100"
+							quality={100}
+						/>
+					</Link>
 				</div>
 			</header>
 
@@ -119,7 +122,7 @@ export default function Home() {
 					</h2>
 
 					<TableRoot>
-						<TableHeader>
+						<TableHeader className="flex items-center justify-between">
 							<TableHead>Nome da nota</TableHead>
 							<TableHead>Última modificação</TableHead>
 						</TableHeader>
