@@ -18,7 +18,7 @@ model User {
   id                   Int      @id @default(autoincrement())
   name                 String   @db.VarChar(255)
   email                String   @db.VarChar(255) @unique
-  password             String   @db.VarChar(255)
+  password             String?   @db.VarChar(255)
   bio                  String?  @db.Text
   profileImageUrl      String?  @db.VarChar(255)
   coverImageUrl        String?  @db.VarChar(255)
@@ -28,6 +28,8 @@ model User {
 
   notes                Note[]
   events               Event[]
+
+  @@map("users")
 }
 
 model Note {
@@ -43,6 +45,8 @@ model Note {
 
   user         User     @relation(fields: [userId], references: [id])
   events       Event[]
+
+    @@map("notes")
 }
 
 model Event {
@@ -54,4 +58,6 @@ model Event {
 
   user      User     @relation(fields: [userId], references: [id])
   note      Note     @relation(fields: [noteId], references: [id])
+
+  @@map("events")
 }
