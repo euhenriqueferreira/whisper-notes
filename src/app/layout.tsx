@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const nunitoSans = Nunito_Sans({
@@ -19,7 +20,10 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className={nunitoSans.className}>
-			<body className="bg-gray-900">{children}</body>
+			<body className="bg-gray-900">
+				<Toaster richColors />
+				{children}
+			</body>
 		</html>
 	);
 }
