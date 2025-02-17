@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id                   Int      @id @default(autoincrement())
+  name                 String   @db.VarChar(255)
+  email                String   @db.VarChar(255) @unique
+  password             String   @db.VarChar(255)
+  bio                  String?  @db.Text
+  profileImageUrl      String?  @db.VarChar(255)
+  coverImageUrl        String?  @db.VarChar(255)
+  isLoginWithPassword  Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  notes                Note[]
+  events               Event[]
+}
+
+model Note {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  title        String   @db.VarChar(255)
+  content      String   @db.Text
+  amountOpened Int      @default(0)
+  isFavorite   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  deletedAt    DateTime? // Soft delete
+
+  user         User     @relation(fields: [userId], references: [id])
+  events       Event[]
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  noteId    Int
+  eventType String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  note      Note     @relation(fields: [noteId], references: [id])
+}
