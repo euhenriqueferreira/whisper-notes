@@ -1,7 +1,6 @@
 import { ButtonRoot } from "@/app/components/button/ButtonRoot";
 import { ButtonText } from "@/app/components/button/ButtonText";
 import { Pagination } from "@/app/components/pagination/Pagination";
-import { SelectRoot } from "@/app/components/select/SelectRoot";
 import { TableBody } from "@/app/components/table/TableBody";
 import { TableData } from "@/app/components/table/TableData";
 import { TableHead } from "@/app/components/table/TableHead";
@@ -9,8 +8,15 @@ import { TableHeader } from "@/app/components/table/TableHeader";
 import { TableRoot } from "@/app/components/table/TableRoot";
 import { TableRow } from "@/app/components/table/TableRow";
 import {
+	Select,
+	SelectContent,
+	SelectGroup,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
+import {
 	ArrowDown,
-	CaretDown,
 	Funnel,
 	NoteBlank,
 	XCircle,
@@ -36,32 +42,21 @@ export default function NoteList() {
 					</div>
 					<div className="flex gap-3 justify-end">
 						<div className="w-44">
-							<SelectRoot>
-								<ButtonRoot
-									color="secondary"
-									size="normal"
-									variant="outline"
-								>
-									<ButtonText>Tipo de evento</ButtonText>
-									<CaretDown size={14} />
-								</ButtonRoot>
-								{/* <SelectDropdown>
-									<ButtonRoot
-										color="secondary"
-										size="normal"
-										variant="ghost"
-									>
-										<ButtonText>Criação</ButtonText>
-									</ButtonRoot>
-									<ButtonRoot
-										color="secondary"
-										size="normal"
-										variant="ghost"
-									>
-										<ButtonText>Deleção</ButtonText>
-									</ButtonRoot>
-								</SelectDropdown> */}
-							</SelectRoot>
+							<Select>
+								<SelectTrigger className="w-full">
+									<SelectValue placeholder="Tipo de evento" />
+								</SelectTrigger>
+								<SelectContent>
+									<SelectGroup>
+										<SelectItem value="created">
+											Criação
+										</SelectItem>
+										<SelectItem value="deleted">
+											Exclusão
+										</SelectItem>
+									</SelectGroup>
+								</SelectContent>
+							</Select>
 						</div>
 						<div className="w-32">
 							<ButtonRoot

@@ -1,15 +1,21 @@
 import { ButtonRoot } from "@/app/components/button/ButtonRoot";
 import { ButtonText } from "@/app/components/button/ButtonText";
-import { SelectRoot } from "@/app/components/select/SelectRoot";
 import { TextInput } from "@/app/components/textInput/TextInput";
 import { TextInputBox } from "@/app/components/textInput/TextInputBox";
 import { TextInputLabel } from "@/app/components/textInput/TextInputLabel";
 import { TextInputRoot } from "@/app/components/textInput/TextInputRoot";
 import { ThemeSelector } from "@/app/components/themeSelector/ThemeSelector";
 import {
+	Select,
+	SelectContent,
+	SelectGroup,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from "@/components/ui/select";
+import {
 	ArrowsCounterClockwise,
 	CameraRotate,
-	CaretDown,
 	FloppyDisk,
 	Trash,
 	XCircle,
@@ -143,39 +149,22 @@ export default function Profile() {
 						Método de login
 					</p>
 
-					<div className="w-52">
-						<div className="relative">
-							<SelectRoot>
-								<ButtonRoot
-									color="secondary"
-									size="normal"
-									variant="outline"
-								>
-									<ButtonText>Tipo de login</ButtonText>
-									<CaretDown size={14} />
-								</ButtonRoot>
-								{/* <SelectDropdown>
-									<ButtonRoot
-										color="secondary"
-										size="normal"
-										variant="ghost"
-									>
-										<ButtonText>
-											Login com e-mail e senha
-										</ButtonText>
-									</ButtonRoot>
-									<ButtonRoot
-										color="secondary"
-										size="normal"
-										variant="ghost"
-									>
-										<ButtonText>
-											Login com link por e-mail
-										</ButtonText>
-									</ButtonRoot>
-								</SelectDropdown> */}
-							</SelectRoot>
-						</div>
+					<div className="w-64">
+						<Select>
+							<SelectTrigger className="w-full">
+								<SelectValue placeholder="Tipo de login" />
+							</SelectTrigger>
+							<SelectContent>
+								<SelectGroup>
+									<SelectItem value="created">
+										Login com e-mail e senha
+									</SelectItem>
+									<SelectItem value="deleted">
+										Login com link por e-mail
+									</SelectItem>
+								</SelectGroup>
+							</SelectContent>
+						</Select>
 					</div>
 				</div>
 				<div className="w-full flex items-center justify-between px-3 py-2.5 border-2 border-gray-700 hover:border-gray-600 transition duration-100 rounded-md">
