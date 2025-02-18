@@ -1,21 +1,21 @@
-# Decisões de negócio
+# Resumo do projeto
 
-- Menu colapsado vai ser interagível.
-- Quando o usuário clicar em Criar Pasta, não vai ser enviado para uma página, apenas abrirá o dialog independente da página que o usuário estiver.
-- A página de criação e edição de notas vai ser a mesma.
-- Nas linhas da lista de notas, o usuário pode clicar em qualquer lugar que não seja um botão, e a nota deverá ser aberta.
-- Pela primeira vez, o usuário deverá se cadastrar com link mágico por e-mail.
-- O usuário poderá modificar a forma de login (para login com e-mail e senha) na página de perfil
-
-# Tabelas banco de dados
-
-![alt text](image.png)
+Whisper Notes é um app simples e prático para organizar suas anotações de forma rápida e eficiente. Com uma interface minimalista, o app permite criar, editar, excluir notas e muito mais. Ideal para pessoas que querem fugir da complexidade de app mais robustos e precisam apenas de funcionalidades básicas e intuitivas.
 
 # Tecnologias
 
-- Next.js // Framework (Backend)
-- React // Framework (Frontend)
-- Typescript // Tipagem
-- tailwindcss // Estilos
-- Prisma // ORM
-- PostgreSQL // Banco de dados
+- Next.js (Backend)
+- React (Frontend)
+- Typescript (Tipagem)
+- tailwindcss ((Estilos)
+- Prisma (ORM)
+- PostgreSQL (Banco de dados)
+- React Hook Form (Formulários)
+- zod (Validação e Transformação de dados)
+- axios (Requisições HTTP)
+- sonner (Toasts)
+- nookies (Gerenciamento de Cookies)
+- jsonwebtoken (JWT)
+- Framer Motion (Animações)
+- Resend (E-mails)
+- Shadcn/ui (Componentes)
