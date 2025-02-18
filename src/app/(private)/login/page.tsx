@@ -36,7 +36,7 @@ export default function Login() {
 
 	async function handleLoginUser(data: loginFormSchemaType) {
 		try {
-			await api.post("/auth/login", {
+			const response = await api.post("/auth/login", {
 				email: data.email,
 			});
 
@@ -45,7 +45,7 @@ export default function Login() {
 			);
 		} catch (error: unknown) {
 			if (error instanceof AxiosError) {
-				toast.error("Erro na requisição.");
+				toast.error("Não foi possível fazer login.");
 			}
 		}
 	}

@@ -3,21 +3,16 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
 	const { searchParams } = new URL(request.url);
-	const token = searchParams.get("token");
-
-	if (!token) {
-		return NextResponse.json(
-			{ error: "O token é inválido." },
-			{ status: 400 },
-		);
-	}
+	const token = searchParams.get("token") || "";
 
 	try {
 		if (process.env.JWT_SECRET) {
-			const emailDecoded = jwt.decode(token);
+			const tokenDecoded = jwt.verify(token, process.env.JWT_SECRET);
 
 			return NextResponse.json({
+				message: "Token verificado",
 				token: token,
+				decoded: tokenDecoded,
 			});
 		}
 	} catch (error) {

@@ -20,7 +20,10 @@ export async function POST(request: Request) {
 	});
 
 	if (!existingUser) {
-		return NextResponse.json({ error: "Esse usuário não existe." });
+		return NextResponse.json(
+			{ error: "Esse usuário não existe." },
+			{ status: 401 },
+		);
 	}
 
 	const jwtSecret = process.env.JWT_SECRET || "default_secret";
@@ -44,6 +47,11 @@ export async function POST(request: Request) {
 
 		return NextResponse.json({ data });
 	} catch (error) {
-		return NextResponse.json({ error: "deu erro" });
+		return NextResponse.json(
+			{
+				error: "Erro no envio do e-mail de login.",
+			},
+			{ status: 400 },
+		);
 	}
 }
