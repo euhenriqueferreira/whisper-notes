@@ -49,10 +49,10 @@ export default function Register() {
 			});
 
 			toast.success("Você se cadastrou com sucesso!");
-			router.push("/login");
+			await router.push("/login");
 		} catch (error: unknown) {
 			if (error instanceof AxiosError) {
-				toast.error(error.response?.data.error);
+				toast.error("Erro no cadastro, tente novamente.");
 			}
 		}
 	}
