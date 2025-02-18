@@ -5,9 +5,16 @@ import { NextResponse } from "next/server";
 // 	return NextResponse.json({ message: "Hello World!" });
 // }
 
+interface RegisterAPIProps {
+	name: string;
+	email: string;
+}
+
 export async function POST(request: Request) {
 	try {
-		const data = await request.json();
+		const data: RegisterAPIProps = await request.json();
+
+		console.log("data", data);
 
 		const userAlreadyExists = await prisma.user.findUnique({
 			where: {
@@ -21,7 +28,7 @@ export async function POST(request: Request) {
 				{
 					status: 409,
 					headers: { "Content-Type": "application/json" },
-				}
+				},
 			);
 		}
 
@@ -40,7 +47,7 @@ export async function POST(request: Request) {
 			{
 				status: 201,
 				headers: { "Content-Type": "application/json" },
-			}
+			},
 		);
 	} catch (error) {
 		return NextResponse.json(
@@ -48,7 +55,7 @@ export async function POST(request: Request) {
 			{
 				status: 500,
 				headers: { "Content-Type": "application/json" },
-			}
+			},
 		);
 	}
 }

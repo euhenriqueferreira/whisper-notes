@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const authRoutes = ["/login", "/register"];
+const authRoutes = ["/login", "/register", "/callback"];
 
 export function middleware(request: NextRequest) {
-	const token = request.cookies.get("auth_token")?.value;
+	const token = request.cookies.get("@whisper_auth_token")?.value;
 	const isAuthenticated = !!token;
 	const path = request.nextUrl.pathname;
 

@@ -21,7 +21,7 @@ export function ButtonRoot({
 	return (
 		<button
 			{...props}
-			className={`flex items-center transition duration-100 cursor-pointer font-semibold
+			className={`flex items-center transition duration-100 cursor-pointer font-semibold disabled:brightness-75 disabled:cursor-not-allowed
 
 		${countChildren > 1 ? "gap-2" : "justify-center"}
 		${rounded ? "rounded-md" : ""}
