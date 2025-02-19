@@ -74,10 +74,6 @@ export default function Login() {
 	async function handleEmailBlur(event: any) {
 		const email = event.target.value.trim();
 
-		if (!email) {
-			return;
-		}
-
 		try {
 			const response = await api.post("/auth/get-login-method", {
 				email: event.target.value,
@@ -101,6 +97,8 @@ export default function Login() {
 		} catch (error) {
 			if (error instanceof AxiosError)
 				toast.error("Não existe uma conta com esse e-mail.");
+
+			setIsLoginWithPassword(false);
 		}
 	}
 
@@ -138,7 +136,7 @@ export default function Login() {
 		<>
 			<form
 				onSubmit={handleSubmit(handleLoginUser)}
-				className="relative bg-gray-800 border border-gray-700 px-8 py-10 rounded-md flex flex-col items-stretch gap-4"
+				className="relative bg-gray-800 border border-gray-700 px-8 py-10 rounded-md flex flex-col items-stretch gap-4 w-[480px]"
 			>
 				<TextInputRoot>
 					<TextInputLabel htmlFor="email">Seu e-mail</TextInputLabel>
@@ -164,9 +162,21 @@ export default function Login() {
 
 				{isLoginWithPassword && (
 					<TextInputRoot>
-						<TextInputLabel htmlFor="password">
-							Sua senha
-						</TextInputLabel>
+						<div className="flex items-center justify-between w-full">
+							<TextInputLabel htmlFor="password">
+								Sua senha
+							</TextInputLabel>
+							{isLoginWithPassword && (
+								<Link
+									href="/forgot-password"
+									className="text-sm font-normal text-center text-gray-400"
+								>
+									<span className="underline">
+										Esqueci minha senha
+									</span>
+								</Link>
+							)}
+						</div>
 						<TextInputBox>
 							<TextInput
 								type="password"

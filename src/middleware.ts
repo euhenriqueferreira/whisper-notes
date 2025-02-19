@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const authRoutes = ["/login", "/register", "/callback"];
+const authRoutes = [
+	"/login",
+	"/register",
+	"/callback",
+	"/forgot-password",
+	"/reset-password",
+];
 
 export function middleware(request: NextRequest) {
 	const token = request.cookies.get("@whisper_auth_token")?.value;
@@ -14,7 +20,6 @@ export function middleware(request: NextRequest) {
 	if (!isAuthenticated && !authRoutes.includes(path)) {
 		const loginUrl = new URL("/login", request.url);
 
-		loginUrl.searchParams.set("callbackUrl", path);
 		return NextResponse.redirect(loginUrl);
 	}
 

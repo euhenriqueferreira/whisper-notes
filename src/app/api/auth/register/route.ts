@@ -1,10 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
-// export async function GET(request: Request) {
-// 	return NextResponse.json({ message: "Hello World!" });
-// }
-
 interface RegisterAPIProps {
 	name: string;
 	email: string;
@@ -39,15 +35,9 @@ export async function POST(request: Request) {
 			},
 		});
 
-		return new Response(
-			JSON.stringify({
-				message: "Usuário cadastrado com sucesso",
-				user: newUser,
-			}),
-			{
-				status: 201,
-				headers: { "Content-Type": "application/json" },
-			},
+		return NextResponse.json(
+			{ message: "Usuário cadastrado com sucesso", user: newUser },
+			{ status: 201 },
 		);
 	} catch (error) {
 		return NextResponse.json(
