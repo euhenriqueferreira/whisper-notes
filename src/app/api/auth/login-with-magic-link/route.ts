@@ -1,30 +1,19 @@
+import { getUserByEmail } from "@/app/utils/getUserByEmail";
 import LoginEmail from "@/email-templates/login-email";
-import { prisma } from "@/lib/prisma";
 import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.EMAIL_API_KEY);
 
-interface LoginAPIProps {
+interface LoginWithMagicLinkAPIProps {
 	email: string;
 }
 
 export async function POST(request: Request) {
-	const data: LoginAPIProps = await request.json();
+	const data: LoginWithMagicLinkAPIProps = await request.json();
 
-	const existingUser = await prisma.user.findUnique({
-		where: {
-			email: data.email,
-		},
-	});
-
-	if (!existingUser) {
-		return NextResponse.json(
-			{ error: "Esse usuário não existe." },
-			{ status: 401 },
-		);
-	}
+	const existingUser = await getUserByEmail(data.email);
 
 	const jwtSecret = process.env.JWT_SECRET || "default_secret";
 
@@ -40,7 +29,7 @@ export async function POST(request: Request) {
 			to: "quinhopereira.dev@gmail.com",
 			subject: "Login no Whisper Notes",
 			react: LoginEmail({
-				name: existingUser.name,
+				name: existingUser?.name || "Usuário",
 				magicLink: magicLink,
 			}),
 		});
