@@ -36,7 +36,7 @@ export default function Register() {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors, isSubmitting },
+		formState: { errors, isSubmitting, isDirty },
 	} = useForm<registerFormSchemaType>({
 		resolver: zodResolver(registerFormSchema),
 	});
@@ -96,7 +96,7 @@ export default function Register() {
 					size="big"
 					variant="fill"
 					type="submit"
-					disabled={isSubmitting}
+					disabled={isSubmitting || !isDirty}
 				>
 					<ButtonText>Criar conta</ButtonText>
 					<User size={16} />
