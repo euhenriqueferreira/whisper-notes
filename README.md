@@ -19,3 +19,4 @@ Whisper Notes é um app simples e prático para organizar suas anotações de fo
 - Framer Motion (Animações)
 - Resend (E-mails)
 - Shadcn/ui (Componentes)
+- bcryptjs (Hash de senhas)
