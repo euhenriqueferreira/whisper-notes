@@ -1,5 +1,5 @@
 import { getUserByEmail } from "@/app/utils/getUserByEmail";
-import LoginEmail from "@/email-templates/login-email";
+import ResetPasswordEmail from "@/email-templates/reset-password-email";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
@@ -21,9 +21,9 @@ export async function POST(request: Request) {
 			from: `${process.env.EMAIL_FROM_NAME} <${process.env.EMAIL_FROM_EMAIL}>`,
 			to: "quinhopereira.dev@gmail.com",
 			subject: "Redefinir sua senha | Whisper Notes",
-			react: LoginEmail({
+			react: ResetPasswordEmail({
 				name: existingUser?.name || "Usuário",
-				magicLink: resetLink,
+				resetLink: resetLink,
 			}),
 		});
 

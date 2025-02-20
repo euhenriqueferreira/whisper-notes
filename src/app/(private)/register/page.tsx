@@ -10,11 +10,13 @@ import { api } from "@/lib/axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { User } from "@phosphor-icons/react/dist/ssr";
 import { AxiosError } from "axios";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
+import logoSvg from "../../../../public/logo.svg";
 
 const registerFormSchema = z.object({
 	name: z
@@ -59,6 +61,13 @@ export default function Register() {
 
 	return (
 		<>
+			<div className="flex flex-col items-center relative">
+				<h1 className="mb-2.5 text-gray-400 tracking-tight text-5xl font-bold">
+					Bem vindo ao
+				</h1>
+				<Image src={logoSvg} alt="" />
+			</div>
+
 			<form
 				onSubmit={handleSubmit(handleRegisterUser)}
 				className="relative bg-gray-800 border border-gray-700 px-8 py-10 rounded-md flex flex-col items-end gap-4 w-[480px]"

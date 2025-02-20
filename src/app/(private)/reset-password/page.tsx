@@ -14,8 +14,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
+import logoSvg from "../../../../public/logo.svg";
 import lightBlur from "../../../assets/light-blur.png";
-import logoSvg from "../../../assets/logo.svg";
 
 const resetPasswordFormSchema = z
 	.object({

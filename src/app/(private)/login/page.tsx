@@ -10,6 +10,7 @@ import { api } from "@/lib/axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { AxiosError } from "axios";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { setCookie } from "nookies";
@@ -17,6 +18,7 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
+import logoSvg from "../../../../public/logo.svg";
 
 interface userData {
 	id: number;
@@ -74,9 +76,15 @@ export default function Login() {
 	async function handleEmailBlur(event: any) {
 		const email = event.target.value.trim();
 
+		if (!email) {
+			setIsLoginWithPassword(false);
+			setUserCanSubmitForm(false);
+			return;
+		}
+
 		try {
 			const response = await api.post("/auth/get-login-method", {
-				email: event.target.value,
+				email: email,
 			});
 
 			const userData: userData = response.data.user;
@@ -134,6 +142,13 @@ export default function Login() {
 
 	return (
 		<>
+			<div className="flex flex-col items-center relative">
+				<h1 className="mb-2.5 text-gray-400 tracking-tight text-5xl font-bold">
+					Bem vindo ao
+				</h1>
+				<Image src={logoSvg} alt="" />
+			</div>
+
 			<form
 				onSubmit={handleSubmit(handleLoginUser)}
 				className="relative bg-gray-800 border border-gray-700 px-8 py-10 rounded-md flex flex-col items-stretch gap-4 w-[480px]"
